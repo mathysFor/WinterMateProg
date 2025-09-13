@@ -1,30 +1,22 @@
 import Image from "next/image";
+import { Shadow } from "./Shadow";
 
 export const RightSections = () => {
-    
-
-    return(
-
-                <div className="relative isolate w-[80%] mx-auto">
-                  {/* Ombres "nuages" derriere l'image */}
-                  <div className="pointer-events-none absolute -bottom-12 -left-10  w-[250px] h-[190px] rounded-full bg-[#D9D9D9] blur-lg -z-10" />
-                  <div className="pointer-events-none absolute -top-10 -right-10  w-[250px] h-[190px] rounded-full bg-[#D9D9D9] blur-lg -z-10" />
-        
-        
-                  {/* Conteneur image arrondi */}
-                  <div className="relative bg-black rounded-[250px] overflow-hidden">
-                    <Image
-                      src="/hero/skieur.jpg"
-                      alt="Skieur en carving"
-                      width={1000}
-                      height={3025}
-                      className="object-cover"
-                    />
-                    {/* Filtre blanc léger au-dessus de l'image */}
-                    <div className="absolute inset-0 bg-white/30" />
-                  </div>
-                </div>
-        
-
-    )
-}
+  return (
+    <div className="  relative isolate w-[95%]  md:w-[50%]  md:h-[400px] lg:w-[500px]  md:flex md:items-center mx-auto">
+      {/* Ombres "nuages" derriere l'image */}
+      <Shadow/>
+      {/* Conteneur image arrondi */}
+      <div className="relative bg-black h-[300px] w-full lg:w-[698px] lg:h-[600px] lg:mx-auto lg:my-auto rounded-[100px] overflow-hidden">
+        <Image
+          src="/hero/skieur.jpg"
+          alt="Skieur en carving"
+          fill
+          className="object-cover object-bottom"
+        />
+        {/* Filtre blanc léger au-dessus de l'image */}
+        <div className="absolute inset-0 bg-white/30" />
+      </div>
+    </div>
+  );
+};

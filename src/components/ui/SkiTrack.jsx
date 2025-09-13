@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useEffect } from "react";
 export const SkiTrack = ({ className = "", startPct = 0.1 }) => {
       const [width, setWidth] = useState(100); // valeur par défaut

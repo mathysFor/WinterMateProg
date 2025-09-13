@@ -3,7 +3,6 @@
 import Button from "@/components/ui/Button";
 import { Space_Grotesk } from "next/font/google";
 import { RightSections } from "./Right_sections";
-import { SkiTrack } from "@/components/ui/SkiTrack";
 const space = Space_Grotesk({ subsets: ["latin"], display: "swap" });
 
 /**
@@ -18,44 +17,39 @@ const space = Space_Grotesk({ subsets: ["latin"], display: "swap" });
  */
 export default function Hero() {
   return (
-    <section className="relative bg-white overflow-hidden">
+    <section className="relative z-20 bg-white lg:pb-10 overflow-visible">
       {/* Decorative dashed path - left vertical sweep */}
-<SkiTrack className="pointer-events-none absolute inset-0 w-full h-full  md:opacity-20 z-0" />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-[20px] pt-6 pb-16 ">
+      <div className="relative z-10 mx-auto md:flex md:flex-row-reverse max-w-7xl px-4 sm:px-6 lg:px-8     mt-[20px]  lg:pb-16 ">
         {/* Image */}
         <RightSections />
 
-        <div>
+        <div className=" md:w-1/2 lg:w-1.3/3 flex flex-col items-center lg:mt-20    md:items-start md:text-left md:justify-center    ">
+          {/* Texts */}
+          <h1
+            className={`${space.className} text-4xl sm:text-5xl lg:text-6xl z-50 text-black mt-[30px] font-bold leading-[1.1] tracking-tight`}
+          >
+            Prépare tes cuisses pour l’hiver
+          </h1>
 
+          <p
+            className={`mt-4 bg-white text-base sm:text-lg lg:text-xl z-50 text-justify max-w-[90%] mx-auto md:mx-0 text-black ${space.className}`}
+          >
+            30 jours d’exercices <span className="font-bold">simples</span> et
+            efficaces, pensés par un pro pour t’aider à skier en{" "}
+            <span className="font-bold">confiance</span>, et surtout{" "}
+            <span className="font-bold">sans blessure</span>.
+          </p>
 
-        {/* Texts */}
-        <h1
-          className={`${space.className} bg-white text-4xl z-50  text-black  mt-[64px] sm:text-5xl font-bold leading-[1.1] tracking-tight`}
-        >
-          Prépare tes cuisses pour l’hiver
-        </h1>
+          {/* CTA group */}
 
-        <p
-          className={`mt-4   bg-white  text-base sm:text-lg z-50 text-justify max-w-[90%] mx-auto text-black ${space.className}`}
-        >
-          30 jours d’exercices <span className="font-bold">simples</span> et
-          efficaces, pensés par un pro pour t’aider à skier en{" "}
-          <span className="font-bold">confiance</span>, et surtout{" "}
-          <span className="font-bold">sans blessure</span>.
-        </p>
-
-        {/* CTA group */}
-        <div className="mt-6 flex flex-col sm:flex-row gap-3">
           <Button
             href="#acheter"
-            className={`bg-[#008CFF] z-40 font-bold ${space.className} rounded-[20px] shadow-[0_10px_20px_#008CFF] h-[50px]`}
+            className={`relative bg-[#008CFF] z-40 mt-10 lg:mt-20 font-bold ${space.className} lg:h-[80px] mx-auto lg:text-[22px] lg:w-[72%] rounded-[20px] w-[90%] shadow-[0_10px_20px_#008CFF] h-[50px]`}
           >
             J’attaque mon programme
           </Button>
         </div>
-        </div>
-
       </div>
 
       {/* Decorative dashed path - bottom sweep */}
