@@ -17,19 +17,19 @@ const space = Space_Grotesk({ subsets: ["latin"], display: "swap" });
  */
 export default function Hero() {
   return (
-    <section className="relative z-20 bg-white lg:pb-10 overflow-visible">
+    <section className="relative z-20 bg-transparent lg:mt-10 lg:pb-10 overflow-visible">
       {/* Decorative dashed path - left vertical sweep */}
 
-      <div className="relative z-10 mx-auto md:flex md:flex-row-reverse max-w-7xl px-4 sm:px-6 lg:px-8     mt-[20px]  lg:pb-16 ">
+      <div className="relative z-10 mx-auto md:flex md:flex-row-reverse max-w-7xl lg:w-[90%] lg:max-w-none px-4 sm:px-6 lg:px-8     mt-[20px]  lg:pb-16 ">
         {/* Image */}
         <RightSections />
 
-        <div className=" md:w-1/2 lg:w-1.3/3 flex flex-col items-center lg:mt-20    md:items-start md:text-left md:justify-center    ">
+        <div className=" md:w-1/2 lg:w-1.3/3 flex flex-col items-center lg:mt-10    md:items-start md:text-left md:justify-center    ">
           {/* Texts */}
           <h1
-            className={`${space.className} text-4xl sm:text-5xl lg:text-6xl z-50 text-black mt-[30px] font-bold leading-[1.1] tracking-tight`}
+            className={`${space.className} text-4xl sm:text-5xl lg:text-6xl z-50 md:bg-white text-black mt-[30px] font-bold leading-[1.1] tracking-tight`}
           >
-            Prépare tes cuisses pour l’hiver
+            Prépare <span className="bg-white">tes cuisses</span> pour l’hiver
           </h1>
 
           <p

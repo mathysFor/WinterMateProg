@@ -48,10 +48,11 @@ export const Compteur = () => {
     }, [inView, count]);
 
 return (
-  <div ref={ref} className="relative z-0 text-white text-center py-4 text-lg">
-    <p className={`text-black ${space.className} flex items-center lg:text-3xl justify-center gap-2`}>
-      <span className="font-bold lg:text-6xl">{count}</span>
-      <span>skieurs ont déjà commencé. Et toi ?</span>
+  <div ref={ref} className="relative z-70 text-white lg:mt-20 lg:bg-white w-[90%] mt-4 lg:border-[#D9D9D9] lg:rounded-[12px] lg:border-1 mx-auto text-center py-4 text-lg">
+    <p className={`text-black ${space.className} bg-white flex items-center lg:text-3xl text-md justify-center gap-2`}>
+      <span className="font-bold lg:text-6xl text-3xl">{count}</span>
+      <span className="hidden md:inline">skieurs ont déjà commencé. Et toi ?</span>
+      <span className="inline md:hidden">skieurs ont déjà commencé.</span>
     </p>
   </div>
 );

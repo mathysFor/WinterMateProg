@@ -5,7 +5,7 @@ import { Compteur } from "@/components/sections/Compteur/Compteur";
 import { SkiTrack } from "@/components/ui/SkiTrack";
 export default function Home() {
   return (
-    <main className="bg-white overflow-hidden">
+    <main className=" bg-white overflow-hidden">
 
       <TopBar />
       <SkiTrack className="pointer-events-none absolute inset-0 w-full h-full    z-10" />
@@ -14,3 +14,4 @@ export default function Home() {
     </main>
   );
 }
+  

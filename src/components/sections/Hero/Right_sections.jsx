@@ -3,7 +3,7 @@ import { Shadow } from "./Shadow";
 
 export const RightSections = () => {
   return (
-    <div className="  relative isolate w-[95%]  md:w-[50%]  md:h-[400px] lg:w-[500px]  md:flex md:items-center mx-auto">
+    <div className="  relative isolate w-[95%]  md:w-[50%]  md:h-[400px]    md:flex md:items-center mx-auto">
       {/* Ombres "nuages" derriere l'image */}
       <Shadow/>
       {/* Conteneur image arrondi */}
