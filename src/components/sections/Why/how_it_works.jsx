@@ -125,7 +125,7 @@ const HowItWorks = ({}) => {
   return (
     <section className={`${space.className} py-0 bg-[#008CFF] `}>
       <HowItWorksHeader  />
-      <div className={`max-w-6xl lg:py-5 mx-auto flex flex-col md:flex-row h-full items-start gap-4 "}`}>
+      <div className={`relative max-w-6xl lg:py-5 mx-auto flex flex-col md:flex-row h-full z-50 items-start gap-4`}>
         <StepsList progress={progress} videoRef={videoRef} steps={steps} activeStep={activeStep} handleStepChange={handleStepChange} prevStep={prevStep} />
         <VideoDisplay handleStepChange={handleStepChange} videoRef={videoRef} steps={steps} activeStep={activeStep} prevStep={prevStep} />
       </div>

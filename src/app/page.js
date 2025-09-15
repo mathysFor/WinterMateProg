@@ -6,10 +6,10 @@ import { Why } from "@/components/sections/Why/Why";
 import { Who } from "@/components/sections/Who/Who";
 export default function Home() {
   return (
-    <main className=" bg-white overflow-hidden">
+    <main className=" bg-white overflow-x-hidden overflow-y-visible">
 
+      <SkiTrack mode="document" fixed={false} className=" -z-[9999]" />
       <TopBar />
-      <SkiTrack className="pointer-events-none absolute inset-0 w-full h-full    z-100" />
       <Hero />
       <Compteur />
       <Why />
@@ -17,4 +17,3 @@ export default function Home() {
     </main>
   );
 }
-  

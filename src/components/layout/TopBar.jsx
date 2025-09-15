@@ -22,7 +22,7 @@ export default function TopBar() {
   return (
     <header
       className={`sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-white
-      border-b border-black/10 `}
+      border-b border-black/10  `}
     >
       <div className="mx-auto max-w-8xl px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between">
         {/* Logo */}

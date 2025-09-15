@@ -1,9 +1,10 @@
 const HowItWorksHeader = ({  }) => {
   
     return (
-      <div className=" text-center py-10    w-[100vw]">
-        <h2 className=" text-[22px] lg:text-[32px] font-bold text-white">Pourquoi acheter ce programme ?</h2>
-        
+         <div className="relative text-center py-10 z-50">
+        <h2 className="inline-block px-4  rounded text-[22px] lg:text-[32px] bg-[#008CFF] z-50 font-bold text-white">
+          Pourquoi acheter ce programme ?
+        </h2>
       </div>
     );
   };
