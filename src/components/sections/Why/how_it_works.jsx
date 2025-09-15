@@ -4,6 +4,7 @@ import HowItWorksHeader from "./how_it_works_header";
 import StepsList from "./steps_list";
 import VideoDisplay from "./video_display";
 import { Space_Grotesk } from "next/font/google";
+import Button from "@/components/ui/Button";
 
 const space = Space_Grotesk({ subsets: ["latin"], display: "swap" });
  
@@ -127,6 +128,16 @@ const HowItWorks = ({}) => {
       <div className={`max-w-6xl lg:py-5 mx-auto flex flex-col md:flex-row h-full items-start gap-4 "}`}>
         <StepsList progress={progress} videoRef={videoRef} steps={steps} activeStep={activeStep} handleStepChange={handleStepChange} prevStep={prevStep} />
         <VideoDisplay handleStepChange={handleStepChange} videoRef={videoRef} steps={steps} activeStep={activeStep} prevStep={prevStep} />
+      </div>
+      <div className=" w-full py-4 flex justify-center">
+        <Button
+          variant="whiteOnBlue"
+          className="mb-10 mt-5 font-bold"
+          size="lg"
+          onClick={() => (window.location.href = '#pricing')}
+        >
+          Tout ça pour seulement 19,99 €
+        </Button>
       </div>
     </section>
   );

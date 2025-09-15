@@ -3,8 +3,8 @@
 import { useState, useEffect } from "react";
 export const SkiTrack = ({ className = "", startPct = 0.1 }) => {
       const [width, setWidth] = useState(100); // valeur par défaut
-  const height = 800;
-  const segmentCount = 1;
+  const height = 1800;
+  const segmentCount = 10;
   const segmentHeight = height / segmentCount;
   const startY = 0;
 
