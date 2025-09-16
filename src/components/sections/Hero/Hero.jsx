@@ -27,9 +27,9 @@ export default function Hero() {
         <div className=" md:w-1/2 lg:w-1.3/3 flex flex-col items-center lg:mt-10    md:items-start md:text-left md:justify-center    ">
           {/* Texts */}
           <h1
-            className={`${space.className} text-4xl sm:text-5xl lg:text-6xl z-50 md:bg-white text-black mt-[30px] font-bold leading-[1.1] tracking-tight`}
+            className={`${space.className} text-4xl sm:text-5xl lg:text-6xl z-50 bg-white text-black mt-[30px] font-bold leading-[1.1] tracking-tight`}
           >
-            Prépare <span className="bg-white">tes cuisses</span> pour l’hiver
+          Prépare tes cuisses pour l’hiver
           </h1>
 
           <p

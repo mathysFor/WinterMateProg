@@ -10,7 +10,7 @@ export default function Button({
   ...props 
 }) {
   const baseStyles =
-    "cursos-pointer inline-flex items-center justify-center rounded-xl px-6 py-3 font-semibold transition shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 cursor-pointer select-none hover:opacity-90 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed";
+    "cursor-pointer inline-flex items-center justify-center rounded-xl px-6 py-3 font-semibold transition shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 cursor-pointer select-none hover:opacity-90 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed";
 
   const variants = {
     primary: "bg-[#008CFF] text-white focus:ring-blue-600",
