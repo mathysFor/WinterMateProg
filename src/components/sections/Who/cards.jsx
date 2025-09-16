@@ -103,7 +103,7 @@ export const Cards = () => {
 
   return (
     <FlipContext.Provider value={{ flippedIndex, setFlippedIndex, isHoverCapable }}>
-      <div className="overflow-x-auto xl:mt-10 lg:flex ">
+      <div  style={{ scrollbarWidth: "none", msOverflowStyle: "none" }} className="overflow-x-auto  xl:mt-10 lg:flex ">
         <div className="flex gap-5 px-5  xl:w-[80%] xl:mx-auto pb-10 pt-10 w-max lg:w-full lg:justify-around" onMouseLeave={() => setFlippedIndex(null)}>
           {cards.map((card, index) => (
             <Card

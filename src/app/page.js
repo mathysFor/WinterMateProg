@@ -4,6 +4,7 @@ import { Compteur } from "@/components/sections/Compteur/Compteur";
 import { SkiTrack } from "@/components/ui/SkiTrack";
 import { Why } from "@/components/sections/Why/Why";
 import { Who } from "@/components/sections/Who/Who";
+import { Reviews } from "@/components/sections/Reviews/Reviews";
 export default function Home() {
   return (
     <main className=" bg-white overflow-x-hidden overflow-y-visible">
@@ -14,6 +15,7 @@ export default function Home() {
       <Compteur />
       <Why />
       <Who />
+      <Reviews/>
     </main>
   );
 }

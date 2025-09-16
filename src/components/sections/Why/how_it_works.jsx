@@ -17,7 +17,7 @@ const stepsJoin = [
   },
   {
     title: "Simple & accessible",
-    description: "Des exercices simples, accessibles partout, dans une plateforme intuitive.",
+    description: "Des exercices simples et sans matériel, accessibles partout, dans une plateforme intuitive.",
     video: "/video/video_demo_booking.mp4"
   },
   {
@@ -29,7 +29,8 @@ const stepsJoin = [
     title: "Pensé pour le ski",
     description: "Un programme créé par un skieur pro, pensé pour tous les passionnés de glisse.",
     video: "/video/video_demo_landing.mp4"
-  }
+  },
+ 
 ];
 
 const HowItWorks = ({}) => {
@@ -132,7 +133,7 @@ const HowItWorks = ({}) => {
       <div className=" w-full py-4 flex justify-center">
         <Button
           variant="whiteOnBlue"
-          className="mb-10 mt-5 font-bold"
+          className="mb-10 mt-5 z-50  font-bold"
           size="lg"
           onClick={() => (window.location.href = '#pricing')}
         >

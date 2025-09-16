@@ -3,7 +3,7 @@ import Title from "./Title";
 
 export const Who = () => {
   return (
-    <section className="bg-white">
+    <section className="bg-white pb-10">
       <Title />
       <Cards/>
     </section>
