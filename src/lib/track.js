@@ -1,13 +1,13 @@
 // src/lib/track.js
 "use client";
-import { track as vercelTrack } from '@vercel/analytics';
-
-export function getBucket() {
-  return document.cookie.match(/ab_bucket=(A|B)/)?.[1] || 'A';
-}
+import posthog from "posthog-js";
 
 export function track(name, props = {}) {
-  try {
-    vercelTrack(name, { bucket: getBucket(), ...props });
-  } catch {}
+  if (typeof window !== "undefined") {
+    posthog.capture(name, props);
+  }
+}
+
+export function trackFooterCTA() {
+  track("cta_click", { position: "footer" });
 }

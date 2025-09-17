@@ -6,6 +6,7 @@ export default function Button({
   href = "https://buy.stripe.com/test_14A14ocpyebu4hZ0FVeQM00", // default Stripe link
   children, 
   className, 
+  onClick,
   variant = "primary", // "primary" | "secondary"
   ...props 
 }) {
@@ -21,16 +22,22 @@ export default function Button({
 
   const classes = twMerge(clsx(baseStyles, variants[variant], className));
 
+
   if (href) {
     return (
-      <Link href={href} className={classes} {...props}>
-        {children}
+      <Link
+        href={href}
+        onClick={onClick}
+        className={classes}
+        {...props}
+      >
+          {children}
       </Link>
     );
   }
 
   return (
-    <button className={classes} {...props}>
+    <button onClick={onClick} className={classes} {...props}>
       {children}
     </button>
   );
