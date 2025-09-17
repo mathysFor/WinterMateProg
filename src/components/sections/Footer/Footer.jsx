@@ -6,10 +6,10 @@ const space_grotesk = Space_Grotesk({ subsets: ['latin']})
 const Footer = () => {
   const year = new Date().getFullYear();
   return (
-    <footer className={`${space_grotesk.className} bg-white relative border-t border-black/10 mt-10 text-black`}>
-      <div className="max-w-6xl mx-auto px-6 py-10 flex flex-col gap-8">
+    <footer className={`${space_grotesk.className} bg-white relative border-t align-middle flex border-black/10 mt-10 text-black`}>
+      <div className="max-w-6xl mx-auto px-6 py-10  align-middle flex flex-col gap-8 items-center text-center md:items-start md:text-left">
         {/* Brand */}
-        <div className="flex flex-col items-start">
+        <div className="flex flex-col align-middle items-center md:items-start">
           <Image
             src="/Logo.svg"
             alt="WinterMate logo"
@@ -24,7 +24,7 @@ const Footer = () => {
         </div>
 
         {/* Navigation */}
-        <nav className="flex flex-col sm:flex-row flex-wrap gap-4 text-sm">
+        <nav className="flex flex-col sm:flex-row flex-wrap gap-4 text-sm justify-center text-center md:justify-start md:text-left">
           <Link href="#programme" className="hover:underline">Programme</Link>
           <Link href="#temoignages" className="hover:underline">Témoignages</Link>
           <Link href="#faq" className="hover:underline">FAQ</Link>
@@ -37,7 +37,7 @@ const Footer = () => {
         <div className="w-full h-[1px] bg-[#008CFF]"></div>
 
         {/* Social icons */}
-        <div className="flex justify-center gap-6">
+        <div className="flex justify-center md:justify-start gap-6">
           <a href="https://linkedin.com" target="_blank" rel="noreferrer">
             <Image src="/icons/linkedin.svg" alt="LinkedIn" width={20} height={20} />
           </a>

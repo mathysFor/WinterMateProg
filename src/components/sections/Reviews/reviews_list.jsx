@@ -1,5 +1,6 @@
 "use client"
 import Image from "next/image"
+import { useEffect, useRef, useState } from "react";
 
 const reviewsTab = [
   { id: 1, avatar: "/profil/addicted.png", stars: 5, comment: "La facilité pour suivre une séance est vraiment très agréable", username: "@axl_frns" },
@@ -36,11 +37,27 @@ export const ReviewsList = () => {
   // Duplicate the list to enable seamless looping (50% shift)
   const loop = [...reviewsTab, ...reviewsTab,...reviewsTab]
 
-  
+  const containerRef = useRef(null);
+  const [running, setRunning] = useState(false);
+
+  useEffect(() => {
+    if (!containerRef.current) return;
+    const el = containerRef.current;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        // Run only when at least 50% visible
+        setRunning(entry.isIntersecting && entry.intersectionRatio >= 0.5);
+      },
+      { threshold: [0, 0.5, 1] }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <div className="overflow-hidden bg-[#008CFF] py-10">
-      <div className="marquee flex gap-8 pointer-events-none">
+    <div ref={containerRef} className="overflow-hidden bg-[#008CFF] py-10">
+      <div className={`marquee flex gap-8 pointer-events-none ${running ? "running" : "paused"}`}>
         {loop.map((r, idx) => {
             
           return (
@@ -58,10 +75,18 @@ export const ReviewsList = () => {
       <style jsx>{`
         .marquee {
           width: max-content;
-          animation: marquee 25s linear infinite;
+          will-change: transform;
+          animation: marquee var(--marquee-duration, 35s) linear infinite;
+          animation-play-state: paused;
+        }
+        .marquee.running {
+          animation-play-state: running;
+        }
+        .marquee.paused {
+          animation-play-state: paused;
         }
         @media (hover: hover) and (pointer: fine) {
-          .marquee:hover {
+          .marquee.running:hover {
             animation-play-state: paused;
           }
         }
@@ -70,7 +95,7 @@ export const ReviewsList = () => {
           100% { transform: translateX(-50%); }
         }
         @media (prefers-reduced-motion: reduce) {
-          .marquee { animation: none; }
+          .marquee { animation: none !important; }
         }
       `}</style>
     </div>

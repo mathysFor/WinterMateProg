@@ -1,7 +1,7 @@
 const VideoDisplay = ({ steps, activeStep,videoRef,handleStepChange }) => {
   
   return (
-    <div className="hidden md:flex md:w-1/2 h-full items-stretch border rounded-xl">
+    <div className="hidden md:flex h-full items-stretch border rounded-xl">
       <video 
         ref={videoRef}
         src={steps[activeStep].video}

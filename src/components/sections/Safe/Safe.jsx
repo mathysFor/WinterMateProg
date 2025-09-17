@@ -1,11 +1,14 @@
-
+"use client";
 import Image from "next/image"
 import { Space_Grotesk } from "next/font/google"
+import { motion } from "framer-motion";
+import { fadeUp, staggerContainer } from "@/lib/motion";
+
 const space_grotesk = Space_Grotesk({ subsets: ['latin'], weight: '700'})
 
 const Paiement = () => {
     return(
-        <div className="justify-center  items-center flex flex-col ">
+        <motion.div variants={fadeUp} className="justify-center  items-center flex flex-col ">
             <Image 
                 src='/safe/Lock.png' 
                 alt="lock"
@@ -15,13 +18,13 @@ const Paiement = () => {
                 className="mb-4 md:mb-5 w-12 md:w-14 lg:w-16 h-auto"
             />
             <h3  className={`${space_grotesk.className} text-black relative bg-white  text-base md:text-lg lg:text-xl leading-snug text-center`}>Paiement 100% sécurisé</h3>
-        </div>
+        </motion.div>
     )
 }
 
 const Home = () => {
     return(
-        <div className="justify-center items-center flex flex-col ">
+        <motion.div variants={fadeUp} className="justify-center items-center flex flex-col ">
             <Image 
                 src='/safe/HomePage.png' 
                 alt="home"
@@ -31,13 +34,13 @@ const Home = () => {
                 className="mb-4 md:mb-5 w-12 md:w-14 lg:w-16 relative h-auto"
             />
             <h3 className={`${space_grotesk.className} text-black bg-white relative text-base md:text-lg lg:text-xl leading-snug text-center`}>Aucun matériel nécessaire, fais-le depuis ton salon</h3>
-        </div>
+        </motion.div>
     )
 }
 
 const Fast = () => {
     return(
-        <div className="justify-center items-center flex flex-col ">
+        <motion.div variants={fadeUp} className="justify-center items-center flex flex-col ">
             <Image 
                 src='/safe/Conflict.png' 
                 alt="speed"
@@ -47,13 +50,19 @@ const Fast = () => {
                 className="mb-4 md:mb-5 w-12 md:w-14 lg:w-16 h-auto relative"
             />
             <h3 className={`${space_grotesk.className} text-black bg-white relative text-base md:text-lg lg:text-xl leading-snug text-center`}>Accès immédiat après l'achat</h3>
-        </div>
+        </motion.div>
     )
 }
 
 export const Safe = () => {
     return (
-        <div className="flex flex-col md:flex-row items-center justify-center gap-10 md:gap-14 lg:gap-20 w-[90%] mx-auto py-10 md:py-16 lg:py-20">
+        <motion.div
+          className="flex flex-col md:flex-row items-center justify-center gap-10 md:gap-14 lg:gap-20 w-[90%] mx-auto py-10 md:py-16 lg:py-20"
+          variants={staggerContainer(0.12, 0.1)}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.4 }}
+        >
             <div className="flex flex-col items-center text-center max-w-sm px-2">
                 <Paiement />
             </div>
@@ -71,6 +80,6 @@ export const Safe = () => {
             <div className="flex flex-col items-center text-center max-w-sm px-2">
                 <Fast />
             </div>
-        </div>
+        </motion.div>
     )
 }

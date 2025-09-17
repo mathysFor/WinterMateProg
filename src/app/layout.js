@@ -1,4 +1,5 @@
 import "./globals.css";
+import { Analytics } from '@vercel/analytics/react';
 
 export const metadata = {
   title: "Prépa Ski – WinterMate",
@@ -11,6 +12,7 @@ export default function RootLayout({ children }) {
       {/* Inter par défaut sur body */}
       <body>
         {children}
+        <Analytics />
       </body>
     </html>
   );

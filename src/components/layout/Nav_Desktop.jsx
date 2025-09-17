@@ -13,7 +13,7 @@ export const NavDesktop = () => {
                   <a href="#pour-qui" className={`hover:text-gray-900 ${spaceGrotesk.className} font-light whitespace-nowrap`}>
                     Pour qui ?
                   </a>
-                  <Button href="#acheter" className={`px-4 py-2 bg-[#008CFF] whitespace-nowrap ${spaceGrotesk.className}`}> Accéder au programme</Button>
+                  <Button className={`px-4 py-2 bg-[#008CFF] whitespace-nowrap ${spaceGrotesk.className}`}> Accéder au programme</Button>
                 </nav>
         
 

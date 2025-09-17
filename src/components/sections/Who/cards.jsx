@@ -4,6 +4,8 @@ import { Space_Grotesk } from "next/font/google";
 const space = Space_Grotesk({ subsets: ["latin"], display: "swap" });
 
 import { useState, useEffect, createContext, useContext } from 'react'
+import { motion } from "framer-motion";
+import { fadeUp, scaleIn, staggerContainer } from "@/lib/motion";
 
 const FlipContext = createContext()
 
@@ -52,15 +54,18 @@ const Card = ({ title, description, icon, subtitle, index }) => {
   }
 
   return (
-    <div
+    <motion.div
       role="button"
       tabIndex={0}
       onClick={isHoverCapable ? undefined : toggle}
       onKeyDown={onKey}
       onMouseEnter={isHoverCapable ? open : undefined}
       onMouseLeave={isHoverCapable ? () => setFlippedIndex(null) : undefined}
-      className="relative w-[160px] h-[220px] md:w-[230px] md:h-[300px] xl:w-[260px] xl:h-[350px] rounded-[12px] shrink-0 cursor-pointer [perspective:1000px]"
+      className="relative w-[160px] h-[220px] md:w-[230px] md:h-[300px] xl:w-[260px] xl:h-[350px] rounded-[12px] shrink-0 cursor-pointer [perspective:1000px] will-change-transform"
       aria-pressed={flipped}
+      variants={scaleIn}
+      whileHover={{ y: -4 }}
+      transition={{ duration: 0.3 }}
     >
       <div
         className="absolute inset-0 transition-transform duration-500 will-change-transform [transform-style:preserve-3d]"
@@ -80,7 +85,7 @@ const Card = ({ title, description, icon, subtitle, index }) => {
           <span className={`${space.className} mt-3 text-xs md:hidden  md:text-lg text-[#008CFF] underline`}>Retour</span>
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
 
@@ -103,8 +108,15 @@ export const Cards = () => {
 
   return (
     <FlipContext.Provider value={{ flippedIndex, setFlippedIndex, isHoverCapable }}>
-      <div  style={{ scrollbarWidth: "none", msOverflowStyle: "none" }} className="overflow-x-auto  xl:mt-10 lg:flex ">
-        <div className="flex gap-5 px-5  xl:w-[80%] xl:mx-auto pb-10 pt-10 w-max lg:w-full lg:justify-around" onMouseLeave={() => setFlippedIndex(null)}>
+      <div style={{ scrollbarWidth: "none", msOverflowStyle: "none" }} className="overflow-x-auto xl:mt-10 lg:flex">
+        <motion.div
+          className="flex gap-5 px-5 xl:w-[80%] xl:mx-auto pb-10 pt-10 w-max lg:w-full lg:justify-around"
+          onMouseLeave={() => setFlippedIndex(null)}
+          variants={staggerContainer(0.12, 0.15)}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.4 }}
+        >
           {cards.map((card, index) => (
             <Card
               key={index}
@@ -115,7 +127,7 @@ export const Cards = () => {
               subtitle={card.subtitle}
             />
           ))}
-        </div>
+        </motion.div>
       </div>
     </FlipContext.Provider>
   )

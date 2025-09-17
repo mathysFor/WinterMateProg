@@ -5,6 +5,9 @@ import StepsList from "./steps_list";
 import VideoDisplay from "./video_display";
 import { Space_Grotesk } from "next/font/google";
 import Button from "@/components/ui/Button";
+import { motion } from "framer-motion";
+import { fadeUp, staggerContainer } from "@/lib/motion";
+
 
 const space = Space_Grotesk({ subsets: ["latin"], display: "swap" });
  
@@ -124,23 +127,54 @@ const HowItWorks = ({}) => {
   };
 
   return (
-    <section className={`${space.className} py-0 bg-[#008CFF] `}>
-      <HowItWorksHeader  />
+    <motion.section
+      className={`${space.className} py-0 bg-[#008CFF] `}
+      variants={staggerContainer(0.12)}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+    >
+      <motion.div variants={fadeUp}><HowItWorksHeader /></motion.div>
       <div className={`relative max-w-6xl lg:py-5 mx-auto flex flex-col md:flex-row h-full z-50 items-start gap-4`}>
-        <StepsList progress={progress} videoRef={videoRef} steps={steps} activeStep={activeStep} handleStepChange={handleStepChange} prevStep={prevStep} />
-        <VideoDisplay handleStepChange={handleStepChange} videoRef={videoRef} steps={steps} activeStep={activeStep} prevStep={prevStep} />
+        {/* Colonne cartes (animated, layout-safe) */}
+        <motion.div
+          variants={fadeUp}
+          className="basis-full md:basis-1/2 min-w-0  "
+        >
+          <StepsList
+            progress={progress}
+            videoRef={videoRef}
+            steps={steps}
+            activeStep={activeStep}
+            handleStepChange={handleStepChange}
+            prevStep={prevStep}
+          />
+        </motion.div>
+  
+        {/* Colonne vidéo (animated, layout-safe) */}
+        <motion.div
+          variants={fadeUp}
+          className="basis-full md:basis-1/2 min-w-0"
+        >
+          <VideoDisplay
+            handleStepChange={handleStepChange}
+            videoRef={videoRef}
+            steps={steps}
+            activeStep={activeStep}
+            prevStep={prevStep}
+          />
+        </motion.div>
       </div>
-      <div className=" w-full py-4 flex justify-center">
+      <motion.div variants={fadeUp} className=" w-full py-4 flex justify-center">
         <Button
           variant="whiteOnBlue"
           className="mb-10 mt-5 z-50  font-bold"
           size="lg"
-          onClick={() => (window.location.href = '#pricing')}
         >
           Tout ça pour seulement 19,99 €
         </Button>
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   );
 };
 

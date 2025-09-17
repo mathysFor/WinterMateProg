@@ -24,7 +24,7 @@ export const MenuMobile = ({ open, setOpen }) => {
               Pour qui ?
             </a>
        
-            <Button href="#acheter" className={`w-full px-4 py-2 bg-[#008CFF]  ${spaceGrotesk.className} `} > Accéder au programme</Button>
+            <Button   className={`w-full px-4 py-2 bg-[#008CFF]  ${spaceGrotesk.className} `} > Accéder au programme</Button>
           </nav>
         </div>
       </div>

@@ -44,7 +44,6 @@ export default function Hero() {
           {/* CTA group */}
 
           <Button
-            href="#acheter"
             className={`relative bg-[#008CFF] z-40 mt-10 lg:mt-20 font-bold ${space.className} lg:h-[80px] mx-auto lg:text-[22px] lg:w-[72%] rounded-[20px] w-[90%] shadow-[0_10px_20px_#008CFF] h-[50px]`}
           >
             J’attaque mon programme

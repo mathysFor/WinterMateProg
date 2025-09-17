@@ -3,7 +3,7 @@ import clsx from "clsx";
 import { twMerge } from "tailwind-merge";
 
 export default function Button({ 
-  href,        // si présent -> <Link>
+  href = "https://buy.stripe.com/test_14A14ocpyebu4hZ0FVeQM00", // default Stripe link
   children, 
   className, 
   variant = "primary", // "primary" | "secondary"
