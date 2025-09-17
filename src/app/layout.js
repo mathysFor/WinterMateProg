@@ -5,7 +5,7 @@ export const metadata = {
   description: "Programme d’avant-saison pour des cuisses prêtes cet hiver.",
 };
 
-import { PostHogFeature } from "posthog-js/react";
+import { PostHogProvider } from "./providers";
 
 export default function RootLayout({ children }) {
   return (
