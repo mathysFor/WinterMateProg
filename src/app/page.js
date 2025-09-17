@@ -6,6 +6,9 @@ import { Why } from "@/components/sections/Why/Why";
 import { Who } from "@/components/sections/Who/Who";
 import { Reviews } from "@/components/sections/Reviews/Reviews";
 import { Guide } from "@/components/sections/Guide/Guide";
+import { Safe } from "@/components/sections/Safe/Safe";
+import Button from "@/components/ui/Button";
+import Footer from "@/components/sections/Footer/Footer";
 export default function Home() {
   return (
     <main className=" bg-white overflow-x-hidden overflow-y-visible">
@@ -18,6 +21,14 @@ export default function Home() {
       <Who />
       <Reviews/>
       <Guide/>
+      <Safe />
+      <div className="w-full py- md:py-16 lg:py-20 bg-white justify-center items-center flex">
+
+      <Button className={'mx-auto relative p-5  font-bold z-20'}>Prêt à attaquer la saison en pleine forme ?</Button>
+      </div>
+      {/* <FAQ /> */}
+
+      <Footer />
     </main>
   );
 }
