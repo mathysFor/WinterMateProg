@@ -6,7 +6,7 @@ export const metadata = {
 };
 
 import { PostHogProvider } from "./providers";
-
+import { trackScrollDepth } from "@/lib/track";
 export default function RootLayout({ children }) {
   return (
     <html lang="fr">

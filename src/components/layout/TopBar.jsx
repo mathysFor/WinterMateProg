@@ -5,7 +5,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { spaceGrotesk } from "@/lib/fonts";
 import { BurgerMobile } from "../ui/Menu";
-import Button from "../ui/Button";
 import { MenuMobile } from "./Menu_Mobile";
 import { NavDesktop } from "./Nav_Desktop";
 export default function TopBar() {

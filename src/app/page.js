@@ -12,7 +12,8 @@ import { Safe } from "@/components/sections/Safe/Safe";
 import Button from "@/components/ui/Button";
 import Footer from "@/components/sections/Footer/Footer";
 import SectionReveal from "@/lib/motion";
-import {  trackFooterCTA } from "@/lib/track";
+import Faq from "@/components/sections/Faq/Faq";
+import {  trackCTA } from "@/lib/track";
 
 export default function Home() {
   return (
@@ -26,12 +27,14 @@ export default function Home() {
       <Reviews />
       <Guide />
       <Safe />
+      <Faq />
+      {/* CTA final */}
       <SectionReveal>
         <div className="w-full py- md:py-16 lg:py-20 bg-white justify-center items-center flex">
           <Button
-          onClick={trackFooterCTA}
+          onClick={()=>trackCTA('footer')}
             className={
-              "mx-auto relative p-5 font-bold z-20 transform transition ease-out duration-200 hover:-translate-y-0.5 active:translate-y-0"
+              "mx-auto relative p-5 mt-10 font-bold z-20 transform transition ease-out duration-200 hover:-translate-y-0.5 active:translate-y-0"
             }
           >
             Prêt à attaquer la saison en pleine forme ?

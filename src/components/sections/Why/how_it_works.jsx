@@ -7,7 +7,7 @@ import { Space_Grotesk } from "next/font/google";
 import Button from "@/components/ui/Button";
 import { motion } from "framer-motion";
 import { fadeUp, staggerContainer } from "@/lib/motion";
-
+import { trackCTA } from "@/lib/track";
 
 const space = Space_Grotesk({ subsets: ["latin"], display: "swap" });
  
@@ -170,6 +170,9 @@ const HowItWorks = ({}) => {
           variant="whiteOnBlue"
           className="mb-10 mt-5 z-50  font-bold"
           size="lg"
+            onClick={() => trackCTA("why_section")}
+
+          
         >
           Tout ça pour seulement 19,99 €
         </Button>

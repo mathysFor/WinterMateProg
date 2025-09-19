@@ -4,6 +4,7 @@ import Title from "./Title";
 import { motion } from "framer-motion";
 import { fadeUp, staggerContainer } from "@/lib/motion";
 
+
 export const Who = () => {
   return (
     <motion.section

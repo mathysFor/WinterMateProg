@@ -43,7 +43,10 @@ export const Guide = () => {
       </motion.div>
       <motion.div variants={fadeUp} className="flex justify-center">
         <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
-          <Button className="mt-10 z-50 rounded-[20px] relative md:mt-20">Je commence maintenant</Button>
+          <Button
+                      onClick={() => trackCTA("guide_section")}
+          
+          className="mt-10 z-50 rounded-[20px] relative md:mt-20">Je commence maintenant</Button>
         </motion.div>
       </motion.div>
     </motion.section>
